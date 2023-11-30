@@ -11,7 +11,7 @@ SELECT * FROM Shippers
 
 WHERE phone LIKE "%98%";
 
-![Alt text](Shippers-9.png)
+![Alt text](/Скриншоты/Shippers-9.png)
 
 ### Запрос №2: 
 Находит номер телефона грузовой компании Federal Shipping
