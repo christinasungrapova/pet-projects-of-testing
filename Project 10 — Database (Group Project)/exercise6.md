@@ -20,7 +20,7 @@ SELECT phone FROM Shippers
 
 WHERE ShipperName = "Federal Shipping";
 
-![Alt text](Shippers-10.png)
+![Alt text](Скриншоты/Shippers-10.png)
 
 ### Запрос №3: 
 Находит первых двух грузоотправителей у которых в номере телефона есть "555" и сортирует их в алфавитном порядке по названию
@@ -31,7 +31,7 @@ WHERE phone LIKE "%555%"
 
 ORDER BY ShipperName LIMIT 2;
 
-![Alt text](Shippers-11.png)
+![Alt text](Скриншоты/Shippers-11.png)
 
 ## Таблица Suppliers
 
@@ -42,7 +42,7 @@ SELECT COUNT (SupplierID), country
 
 FROM Suppliers GROUP BY country;
 
-![Alt text](Suppliers-20.png)
+![Alt text](Скриншоты/Suppliers-20.png)
 
 ### Запрос №2: 
 Находит страны где поставщиков больше одного
@@ -53,7 +53,7 @@ FROM Suppliers GROUP BY country
 
 HAVING COUNT (SupplierID) > 1;
 
-![Alt text](Suppliers-21.png)
+![Alt text](Скриншоты/Suppliers-21.png)
 
 ### Запрос №3: 
 Находит страны в алфавитном порядке, в промежутке с А по К, с количеством поставщиков больше двух
@@ -66,7 +66,7 @@ GROUP BY country
 
 HAVING COUNT (SupplierID) > 2 ORDER BY country;
 
-![Alt text](Suppliers-22.png)
+![Alt text](Скриншоты/Suppliers-22.png)
 
 ## Таблица OrderDetails
 
@@ -79,7 +79,7 @@ WHERE OrderID BETWEEN 10300 AND 10400
 
 AND ProductID = 75;
 
-![Alt text](OrderDetails-12.png)
+![Alt text](Скриншоты/OrderDetails-12.png)
 
 ### Запрос №2: 
 Показывает количество продуктов у каждого заказа
@@ -88,7 +88,7 @@ SELECT OrderID, SUM (Quantity)
 
 FROM OrderDetails GROUP BY OrderID;
 
-![Alt text](OrderDetails-13.png)
+![Alt text](Скриншоты/OrderDetails-13.png)
 
 ### Запрос №3: 
 Находит номер двух продуктов, который покупали меньше всех
@@ -99,7 +99,7 @@ GROUP BY ProductID
 
 ORDER BY SUM (Quantity) LIMIT 1;
 
-![Alt text](OrderDetails-14.png)
+![Alt text](Скриншоты/OrderDetails-14.png)
 
 ## Таблица Customers
 
@@ -110,7 +110,7 @@ SELECT Country,CustomerID FROM Customers
 
 WHERE City = 'Paris'
 
-![Alt text](Customers.png)
+![Alt text](Скриншоты/Customers.png)
 
 ### Запрос №2:  
 Отображает количество клиентов из страны Германия
@@ -119,7 +119,7 @@ SELECT * FROM Customers
 
 WHERE Country ="Germany"
 
-![Alt text](Customers-1.png)
+![Alt text](Скриншоты/Customers-1.png)
 
 ### Запрос №3: 
 Отображает выбор города, подсчитывает ID, как номера клиентов, где имя клиента отсутствует в "Around the Horn" Drachenblut Delikatessend, группировка по городам имеющий номер клиентов >= 5
@@ -130,7 +130,7 @@ WHERE CustomerName NOT IN ('Around the Horn','Drachenblut Delikatessend')
 
 GROUP BY City HAVING number_of_clients >= 5
 
-![Alt text](Customers-2.png)
+![Alt text](Скриншоты/Customers-2.png)
 
 ## Таблица Categories
 
@@ -141,14 +141,14 @@ SELECT * FROM Categories
 
 WHERE Description LIKE'Cheeses';
 
-![Alt text](Categories-3.png)
+![Alt text](Скриншоты/Categories-3.png)
 
 ### Запрос №2: 
 Отображает количество категорий
 
 SELECT count(CategoryName) AS category\_quantity FROM Categories;
 
-![Alt text](Categories-4.png)
+![Alt text](Скриншоты/Categories-4.png)
 
 ### Запрос №3: 
 Этот запрос отображает выбор из таблицы "Категории", где название категории равно "Приправы" или название категории равно "Морепродукты"
@@ -157,7 +157,7 @@ SELECT * FROM Categories
 
 WHERE CategoryName="Condiments"OR CategoryName="Seafood";
 
-![Alt text](Categories-5.png)
+![Alt text](Скриншоты/Categories-5.png)
 
 ## Таблица Employees
 
@@ -168,7 +168,7 @@ SELECT * FROM Employees
 
 WHERE NOT LastName='Buchanan'
 
-![Alt text](Employees-6.png)
+![Alt text](Скриншоты/Employees-6.png)
 
 ### Запрос №2: 
 Выбор резюме с номером ID >= 7
@@ -177,7 +177,7 @@ SELECT * FROM Employees
 
 WHERE EmployeeID >=7;
 
-![Alt text](Employees-7.png)
+![Alt text](Скриншоты/Employees-7.png)
 
 ### Запрос №3: 
 Выбрать индификатор сотрудника по фамилии и фото.
@@ -188,7 +188,7 @@ FROM Employees
 
 WHERE EmployeeID >=1;
 
-![Alt text](Employees-8.png)
+![Alt text](Скриншоты/Employees-8.png)
 
 ## Таблица Orders
 
@@ -199,7 +199,7 @@ SELECT * FROM Orders
 
 WHERE OrderDate LIKE '%1996-12%';
 
-![Alt text](Orders-15.png)
+![Alt text](Скриншоты/Orders-15.png)
 
 ### Запрос №2: 
 Сортировка заказов с номером сотрудника “1” и номером грузоотправителя “1” из всех пользователей.
@@ -210,7 +210,7 @@ WHERE EmployeeID LIKE "1" and ShipperID LIKE "1"
 
 ORDER BY CustomerID;
 
-![Alt text](Orders-16.png)
+![Alt text](Скриншоты/Orders-16.png)
 
 ### Запрос №3: 
 Выбор даты заказа, идентификатора отправителя из заказов, где ордер ID больше 10435.
@@ -221,7 +221,7 @@ FROM Orders
 
 WHERE OrderID > "10435";
 
-![Alt text](Orders-17.png)
+![Alt text](Скриншоты/Orders-17.png)
 
 ## Таблица Products
 
@@ -232,7 +232,7 @@ SELECT ProductID,ProductName,Unit,MIN(Price)
 
 FROM Products;
 
-![Alt text](Products-18.png)
+![Alt text](Скриншоты/Products-18.png)
 
 ### Запрос №2: 
 Выбор названия продукта и его цены, где цена >= 123,79
@@ -243,7 +243,7 @@ FROM Products
 
 WHERE Price >="123.79"
 
-![Alt text](Products-19.png)
+![Alt text](Скриншоты/Products-19.png)
 
 ### Запрос №3:  
 Отображает выбор прайса, подсчитывает 
@@ -257,5 +257,5 @@ WHERE ProductName NOT IN ('Thüringer Rostbratwurst','Scottish Longbreads')
 
 GROUP BY Price HAVING number_of_clients >= 3;
 
-![Alt text](Products-23.png)
+![Alt text](Скриншоты/Products-23.png)
 
